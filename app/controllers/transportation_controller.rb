@@ -1,7 +1,7 @@
 class TransportationController < ApplicationController
 
 	def index
-		@transportation = Transportation.order(:run_number)
+		@transportation = Transportation.page(params[:page]).per(5)
 	end
 
 
