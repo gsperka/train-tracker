@@ -7,6 +7,8 @@
 			<th>Route</th>
 			<th>Run Number</th>
 			<th>Operator ID</th>
+			<th>Edit</th>
+			<th>Remove</th>
 		</tr>
 		<% @transportation.each do |data|%>
 		<tr class="departure">
@@ -14,8 +16,12 @@
 		  <td><%= data[:route] %></td>
 		  <td><%= data[:run_number] %></td>
 		  <td><%= data[:operator_id] %></td>
+		  <td><%= link_to 'Edit', edit_transport_path(data[:id]) %></td>
+		  <td><%= link_to 'Delete', delete_transport_path(data[:id]), data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
 	    <% end %>
 	  </tr>
 	</table>
-	<%= paginate @transportation %>
+	<div class="paginate-controls">
+	  <%= paginate @transportation %>
+  </div>
 <div>

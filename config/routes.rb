@@ -4,6 +4,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+
+    resources :transportation
+
+    put 'transportation/:id/edit' => 'transportation#edit', as: :edit_transport
+    delete 'transportation/:id' => 'transportation#destory', as: :delete_transport
     root 'transportation#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

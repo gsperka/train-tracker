@@ -4,6 +4,10 @@ class Transportation < ActiveRecord::Base
 
   before_save :remove_duplicate
 
+  def self.ordered
+  	order(:run_number)
+  end
+
   private
 
   def remove_duplicate

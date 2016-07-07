@@ -1,0 +1,29 @@
+<div class="edit-form">
+	<h1>Edit Transportation:</h1>
+  <div>
+    <%= form_for(@single_transport) do |f| %>
+
+    	<div class="form-field">
+	      <%= f.label :train_line %>
+	      <p><%= f.text_field :train_line %></p>
+      </div>
+
+      <div class="form-field">	
+	      <%= f.label :route %>
+	      <p><%= f.text_field :route %></p>
+      </div>
+
+      <div class="form-field">	
+	      <%= f.label :run_number %>
+	      <p><%= f.text_field :run_number %></p>
+      </div>
+
+      <div class="form-field">
+	      <%= f.label :operator_id %>
+	      <p><%= f.text_field :operator_id %></p>
+      </div>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
