@@ -1,10 +1,20 @@
-<h1>Hello</h1>
+<div class="container">
+<h1>Current Train Schedule:</h1>
 
-<% @transportation.each do |data|%>
-	<div>
-	  <%= data[:train_line] %>
-	  <%= data[:route] %>
-	  <%= data[:run_number] %>
-	  <%= data[:operator_id] %>
-  </div>
-<% end %>
+	<table>
+		<tr>
+			<th>Train</th>
+			<th>Route</th>
+			<th>Run Number</th>
+			<th>Operator ID</th>
+		</tr>
+		<% @transportation.each do |data|%>
+		<tr class="departure">
+		  <td><%= data[:train_line] %></td>
+		  <td><%= data[:route] %></td>
+		  <td><%= data[:run_number] %></td>
+		  <td><%= data[:operator_id] %></td>
+	    <% end %>
+	  </tr>
+	</table>
+<div>
