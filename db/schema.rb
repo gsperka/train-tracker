@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20160707154445) do
 
   create_table "transportations", force: :cascade do |t|
-    t.string   "train_line",  default: "unknown"
-    t.string   "route",       default: "unknown"
-    t.string   "run_number",  default: "unknown"
-    t.string   "operator_id", default: "unknown"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.string   "train_line"
+    t.string   "route"
+    t.string   "run_number"
+    t.string   "operator_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

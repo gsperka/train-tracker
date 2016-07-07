@@ -9,6 +9,13 @@
 seed_data = File.read("public/trains.json")
 json = JSON.parse(seed_data)
 
+json["data"].map do |x|
+	x["trainLine"] = "unknown" if x['trainLine'].empty?
+	x["routeName"] = "unknown" if x['routeName'].empty?
+	x["runNumber"] = "unknown" if x['runNumber'].empty?
+	x["operatorId"] = "unknown" if x['operatorId'].empty?
+end
+
 
 json["data"].each do |departure|
 	Transportation.create(
