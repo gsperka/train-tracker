@@ -1,0 +1,10 @@
+<h1>Hello</h1>
+
+<% @transportation.each do |data|%>
+	<div>
+	  <%= data[:train_line] %>
+	  <%= data[:route] %>
+	  <%= data[:run_number] %>
+	  <%= data[:operator_id] %>
+  </div>
+<% end %>
