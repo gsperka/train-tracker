@@ -8,11 +8,24 @@ class TransportationController < ApplicationController
 		@single_transport = Transportation.find(params[:id])
 	end
 
-	def destroy
-		@remove = Transportation.find(params[:id])
-		@remove.delete
-		redirect_to(root_url)
+	def update
+		@transport = Transportation.find(params[:id])
+		@transport.update_attributes(transport_params)
+		redirect_to :root
 	end
+
+	def destroy
+		@remove_transport = Transportation.find(params[:id])
+		@remove_transport.delete
+		redirect_to :root
+	end
+
+	private 
+
+  def transport_params
+    params.require(:transportation).permit(:train_line, :route, :run_number,
+                                   :operator_id)
+  end
 
 
 end

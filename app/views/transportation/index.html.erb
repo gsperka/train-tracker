@@ -16,7 +16,7 @@
 		  <td><%= data[:route] %></td>
 		  <td><%= data[:run_number] %></td>
 		  <td><%= data[:operator_id] %></td>
-		  <td><%= link_to 'Edit', edit_transport_path(data[:id]) %></td>
+		  <td><%= link_to 'Edit', edit_transport_path(data[:id]), :method => :put %></td>
 		  <td><%= link_to 'Delete', delete_transport_path(data[:id]), data: {:confirm => 'Are you sure?'}, :method => :delete %></td>
 	    <% end %>
 	  </tr>
