@@ -6,7 +6,7 @@
 
     	<div class="form-field">
 	      <%= f.label :train_line %>
-	      <p><%= f.text_field :train_line %></p>
+	       <p><%= f.select :train_line, options_for_select(["El", "Metra", "Amtrak"]) %></p>
       </div>
 
       <div class="form-field">	

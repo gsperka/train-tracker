@@ -1,11 +1,12 @@
 <div class="edit-form">
 	<h1>Edit Transportation:</h1>
   <div>
-    <%= form_for(@single_transport) do |f| %>
-
+    <%= form_for @single_transport do |f| %>
+    <%= render :partial => "layouts/shared/flash_messages" %>
+    	
     	<div class="form-field">
 	      <%= f.label :train_line %>
-	      <p><%= f.text_field :train_line %></p>
+	      <p><%= f.select :train_line, options_for_select(["El", "Metra", "Amtrak"]) %></p>
       </div>
 
       <div class="form-field">	

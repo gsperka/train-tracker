@@ -8,6 +8,10 @@ class Transportation < ActiveRecord::Base
   	order(:run_number)
   end
 
+  def self.find_run_number(num)
+  	where(run_number: num)
+  end
+
   private
 
   def remove_duplicate

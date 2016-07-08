@@ -10,9 +10,30 @@ class TransportationController < ApplicationController
 
 	def update
 		@transport = Transportation.find(params[:id])
-		if @transport.update_attributes(transport_params)
+
+		# p '-------------'
+		# p params[:transportation][:run_number]
+		# p '-------------'
+
+		# p '-------------'
+		# p Transportation.find_by(run_number: "A005")
+		# p '-------------'
+
+		# p '-------------'
+		# p Transportation.find_run_number(params[:transportation][:run_number])
+		# p '-------------'
+
+
+		# p '----------------x'
+		# p Transportation.find_by(run_number: params[:run_number])
+		# p '----------------x'
+
+		if Transportation.find_run_number(params[:transportation][:run_number]) == nil
+			@transport.update_attributes(transport_params)
+			@transport.save!
 		  redirect_to :root
 		else
+			flash.now[:error] = "This record did not save. Please make sure the Run Number is unique" 
 			render 'transportation/edit'
 		end
 	end
@@ -26,7 +47,7 @@ class TransportationController < ApplicationController
 		if @new_transport.save
 		  redirect_to :root
 		else
-		  flash.now[:error] = "This record did not save. Make sure to use El, Metra, or Amtrak as the train line (case sensitivity matters)" 
+		  flash.now[:error] = "This record did not save. Make sure this has a unique Run Number and doesn't already exist." 
 			render '/transportation/new'
 		end
 
