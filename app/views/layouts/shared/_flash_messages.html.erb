@@ -1,0 +1,7 @@
+<p id="flash-message" class="paragraph center">
+  <% if flash %>
+    <% flash.each do |name, msg| %>
+    <span class="message"><%= msg %></span>
+    <% end %>
+  <% end %>
+</p>

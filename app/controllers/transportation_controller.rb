@@ -10,8 +10,26 @@ class TransportationController < ApplicationController
 
 	def update
 		@transport = Transportation.find(params[:id])
-		@transport.update_attributes(transport_params)
-		redirect_to :root
+		if @transport.update_attributes(transport_params)
+		  redirect_to :root
+		else
+			render 'transportation/edit'
+		end
+	end
+
+	def new
+		@new_transport = Transportation.new
+	end
+
+	def create
+		@new_transport = Transportation.new(transport_params)
+		if @new_transport.save
+		  redirect_to :root
+		else
+		  flash.now[:error] = "This record did not save. Make sure to use El, Metra, or Amtrak as the train line (case sensitivity matters)" 
+			render '/transportation/new'
+		end
+
 	end
 
 	def destroy
@@ -26,6 +44,5 @@ class TransportationController < ApplicationController
     params.require(:transportation).permit(:train_line, :route, :run_number,
                                    :operator_id)
   end
-
 
 end

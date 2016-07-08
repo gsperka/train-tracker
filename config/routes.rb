@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :transportation
 
     get 'transportation/new' => 'transportation#new', as: :create_new
+    post 'transportation/new' => 'transportation#create'
     put 'transportation/:id/edit' => 'transportation#edit', as: :edit_transport
     delete 'transportation/:id' => 'transportation#destory', as: :delete_transport
     root 'transportation#index'

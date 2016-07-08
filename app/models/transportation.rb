@@ -2,7 +2,7 @@ class Transportation < ActiveRecord::Base
   validates :train_line,  :inclusion => { :in => [ 'El', 'Metra', 'Amtrak'], 
                           :message => "%{value} is not a valid train line" }
 
-  before_save :remove_duplicate
+  before_save :remove_duplicate, :check_for_empty_strings
 
   def self.ordered
   	order(:run_number)
@@ -16,6 +16,12 @@ class Transportation < ActiveRecord::Base
       first_one = duplicates.shift 
       duplicates.each{|double| double.destroy}
     end
+  end
+
+  def check_for_empty_strings
+  	self.route = "unknown" if route.empty?
+  	self.run_number = "unknown" if run_number.empty?
+  	self.operator_id = "unknown" if operator_id.empty?
   end
 
 end
