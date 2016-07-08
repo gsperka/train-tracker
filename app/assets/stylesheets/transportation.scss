@@ -2,11 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
-// .departure {
-// 	background-color: orange;
-// }
-
 .container {
 	text-align: center;
 }
@@ -43,6 +38,18 @@ th, td {
 
 .form-field {
 	margin: 25px;
+}
+
+.btn-container {
+	margin-top: 50px;
+}
+
+.add-new-btn {
+	width: 100px;
+	padding: 10px;
+	background-color: #d3d3d3;
+	text-decoration: none;
+	border: 1px solid black;
 }
 
 .form-field p {

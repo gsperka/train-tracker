@@ -21,6 +21,9 @@
 	    <% end %>
 	  </tr>
 	</table>
+	<div class="btn-container">
+		<%= link_to 'Add New Train', create_new_path, class: "add-new-btn" %>
+	</div>
 	<div class="paginate-controls">
 	  <%= paginate @transportation %>
   </div>
