@@ -12,5 +12,27 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
+
+
+$(document).ready(function() {
+
+	$('.filter').on('change',function(){
+		if ($(this).val() == "Amtrak") {
+			$('.Amtrak').css('display', 'table-row');
+			$('.El, .Metra').css('display', 'none');
+		}
+
+		if ($(this).val() == "El") {
+			$('.El').css('display', 'table-row');
+			$('.Amtrak, .Metra').css('display', 'none');
+		}
+
+	  if ($(this).val() == "Metra") {
+	  	$('.Metra').css('display', 'table-row');
+			$('.El, .Amtrak').css('display', 'none');
+		}
+
+	})
+
+});

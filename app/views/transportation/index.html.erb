@@ -3,7 +3,14 @@
 
 	<table>
 		<tr>
-			<th>Train</th>
+			<th>&nbsp;&nbsp;&nbsp;Train &nbsp;&nbsp;&nbsp;
+				<select class="filter">
+				  <option selected disabled>Filter by Train:</option>
+				  <option value="Amtrak">Amtrak</option>
+				  <option value="El">El</option>
+				  <option value="Metra">Metra</option>
+				</select>
+			</th>
 			<th>Route</th>
 			<th>Run Number</th>
 			<th>Operator ID</th>
@@ -11,7 +18,7 @@
 			<th>Remove</th>
 		</tr>
 		<% @transportation.each do |data|%>
-		<tr class="departure">
+		<tr class="departure <%=data[:train_line]%>">
 		  <td><%= data[:train_line] %></td>
 		  <td><%= data[:route] %></td>
 		  <td><%= data[:run_number] %></td>
