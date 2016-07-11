@@ -2,7 +2,9 @@ class Transportation < ActiveRecord::Base
   validates :train_line,  :inclusion => { :in => [ 'El', 'Metra', 'Amtrak'], 
                           :message => "%{value} is not a valid train line" }
 
+  validates :run_number, uniqueness: true
   before_save :remove_duplicate, :check_for_empty_strings
+
 
   def self.ordered
   	order(:run_number)
