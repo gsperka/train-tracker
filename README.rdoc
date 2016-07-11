@@ -43,4 +43,4 @@ Visit: <tt>localhost:3000</tt>
 
 === Tests:
 
-To run all tests created, type * <tt>rspec</tt> from the root
+To run all tests created, type <tt>rspec</tt> from the root
