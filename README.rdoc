@@ -36,7 +36,7 @@ Visit: <tt>localhost:3000</tt>
 * Add pagination controls that show 5 valid data items per page
 * Set up CRUD (Create, Read, Update, Delete) functionality
 
-==== Assumptions: 
+==== Assumptions that were made creating this application: 
 
 * Run number is unique. Multiple trains can not have the same run number
 * When entering a new train route, 'El', 'Metra', and 'Amtrak' are the only selectable options
