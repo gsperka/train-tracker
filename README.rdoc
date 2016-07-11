@@ -2,7 +2,7 @@
 
 There are multiple train lines in the city of Chicago. Your assignment is to build a Ruby web application that reads data from a simulated API containing train information and displays the data for the user.
 
-= Instructions
+=== Instructions
 
 To successfully run this application:
 
@@ -20,4 +20,27 @@ Once inside this repository, please run the following commands:
 * <tt>rake db:seed</tt>
 * <tt>rails s</tt>
 
-Then make sure to visit: * <tt>localhost:3000</tt>
+Visit: <tt>localhost:3000</tt>
+
+=== Requirements
+
+* Add a filter on the Train Line field allowing a user to display only El trains (for example)
+* Sort the output in alphabetical order by Run Number
+* The app should fail gracefully (display user­friendly error messages)
+* Ignore duplicate entries
+* Use the value “unknown” for any missing data items
+* Ignore records whose trainLine is not ‘El’, ‘Metra’, or ‘Amtrak’
+
+Bonus:
+
+* Add pagination controls that show 5 valid data items per page
+* Set up CRUD (Create, Read, Update, Delete) functionality
+
+Assumptions: 
+
+* Run number is unique. Multiple trains can not have the same run number
+* When entering a new train route, 'El', 'Metra', and 'Amtrak' are the only selectable options
+
+Tests:
+
+To run all tests created, type * <tt>rails s</tt>
